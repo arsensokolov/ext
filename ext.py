@@ -52,9 +52,9 @@ class Ext:
         return '\n'.join(files_extensions)
 
 
-def main(argv):
+def main():
     try:
-        opts, args = getopt.getopt(argv, 'h', ['help'])
+        opts, args = getopt.getopt(sys.argv[1:], 'h', ['help'])
     except getopt.GetoptError as err:
         print(Ext.FAIL + str(err) + Ext.ENDC)
         print(Ext.usage())
@@ -82,4 +82,4 @@ def main(argv):
 
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    main()
