@@ -1,12 +1,16 @@
-***********
-ext Utility
-***********
+*****************
+``suext`` Utility
+*****************
+
+**Installation**
+
+``pip install suext``
 
 **Usage:**
 
-- ``ext <filename>``
-- ``ext <dirname>``
-- ``ext -h|--help``
+- ``suext <filename>``
+- ``suext <dirname>``
+- ``suext -h|--help``
 
 **Options:**
 

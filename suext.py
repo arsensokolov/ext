@@ -18,10 +18,10 @@ class Ext:
     def usage(cls):
         help_text = [
             cls.HEADER + 'Usage:' + cls.ENDC,
-            cls.OKGREEN + '\text' + cls.ENDC,
-            cls.OKGREEN + '\text ' + cls.OKBLUE + cls.UNDERLINE + '<filename>' + cls.ENDC,
-            cls.OKGREEN + '\text ' + cls.OKBLUE + cls.UNDERLINE + '<dirname>' + cls.ENDC,
-            cls.OKGREEN + '\text ' + cls.OKBLUE + '-h|--help' + cls.ENDC,
+            cls.OKGREEN + '\tsuext' + cls.ENDC,
+            cls.OKGREEN + '\tsuext ' + cls.OKBLUE + cls.UNDERLINE + '<filename>' + cls.ENDC,
+            cls.OKGREEN + '\tsuext ' + cls.OKBLUE + cls.UNDERLINE + '<dirname>' + cls.ENDC,
+            cls.OKGREEN + '\tsuext ' + cls.OKBLUE + '-h|--help' + cls.ENDC,
             cls.HEADER + 'Options:' + cls.ENDC,
             '\t' + cls.OKBLUE + cls.UNDERLINE + '<filename>' + cls.ENDC + '\tFull or relative path to filename for '
                                                                           'showing file extension.',

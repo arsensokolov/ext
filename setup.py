@@ -11,10 +11,13 @@ with open(os.path.join(SETUP_DIR, 'README.rst'), 'rb') as f:
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='ext',
+    name='suext',
     version='0.0.1',
     license='MIT',
-    description='Utility for showing any file extension',
+    description=(
+        'Utility for showing any file extension. '
+        'Support show files extension in a directory.'
+    ),
     long_description=README,
     url='https://github.com/arsensokolov/ext',
     author='Arseny Sokolov',
@@ -23,7 +26,7 @@ setup(
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'ext=ext:main'
+            'suext=suext:main'
         ]
     },
     classifiers=[
