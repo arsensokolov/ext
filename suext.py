@@ -6,7 +6,7 @@ import os
 import magic
 from tabulate import tabulate
 
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 
 
 class Ext:
