@@ -1,3 +1,5 @@
 .idea/
 dist/
-suext*
+build/
+*.egg-info
+__pycache__
