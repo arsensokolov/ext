@@ -32,13 +32,17 @@ class Ext:
     def _render_in_table(self, rows):
         return tabulate(rows, headers=self._headers)
 
-    def get_file_extension(self, filename):
+    def get_file_extension(self, filename, only_ext=False):
         result = [filename]
         ext = filename.split('.')[-1]
         if self.system == 'nt':
             true_ext = ext.split('\\')[-1]
         else:
             true_ext = ext.split('/')[-1]
+
+        if only_ext:
+            return true_ext
+
         result.append(true_ext)
 
         if self.mime_type:
@@ -60,7 +64,7 @@ class Ext:
         try:
             for filename in os.listdir(dirname):
                 if os.path.isfile(os.path.join(dirname, filename)):
-                    ext = self.get_file_extension(os.path.join(dirname, filename))
+                    ext = self.get_file_extension(os.path.join(dirname, filename), True)
                     row = [
                         filename,
                         ext,
