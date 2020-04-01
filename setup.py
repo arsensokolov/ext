@@ -1,5 +1,5 @@
 import os
-
+from suext import __version__
 from setuptools import setup, find_packages
 
 SETUP_DIR = os.path.dirname(__file__)
@@ -7,28 +7,33 @@ SETUP_DIR = os.path.dirname(__file__)
 with open(os.path.join(SETUP_DIR, 'README.rst'), 'rb') as f:
     README = f.read().decode('utf-8')
 
-# allow setup.py to be run from any path
+with open(os.path.join(SETUP_DIR, 'requirements.txt'), 'r') as f:
+    REQUIREMENTS = f.read()
+
+# allow setup.py to be run from any  path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='suext',
-    version='0.0.1',
+    version=__version__,
     license='MIT',
     description=(
-        'Utility for showing any file extension. '
-        'Support show files extension in a directory.'
+        'Utility for showing any file extension and MIME type info. '
+        'Support show files information in a directory as list or table.'
     ),
     long_description=README,
     url='https://github.com/arsensokolov/ext',
     author='Arseny Sokolov',
     author_email='me@arsen.pw',
+    install_requires=REQUIREMENTS,
     packages=find_packages(),
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'suext=suext:main'
+            'suext=suext:_main'
         ]
     },
+    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
@@ -49,6 +54,13 @@ setup(
         'Operating System :: POSIX :: BSD :: OpenBSD',
         'Operating System :: POSIX :: Linux',
         'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
         'Topic :: System',
         'Topic :: System :: Filesystems',
         'Topic :: System :: Shells',
